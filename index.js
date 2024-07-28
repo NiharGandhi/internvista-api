@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb+srv://nihargandhi0000:6DlFU6UIwGLdibj5@cluster0.j2sk5gy.mongodb.net/intern?retryWrites=true&w=majority&appName=Cluster0", {
+mongoose.connect(process.env.EXPO_PUBLIC_MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
