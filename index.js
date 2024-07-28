@@ -27,6 +27,13 @@ app.listen(port, () => {
 const Internships = require("./models/internship");
 const Applications = require("./models/application");
 
+app.get("/", (req, res) => {
+    res.status(200).send({
+        "success": true,
+        "message": "Connected to MongoDB"
+    });
+})
+
 // Endpoints
 app.get('/getInternships', async (req, res) => {
     console.log('Get internships');
